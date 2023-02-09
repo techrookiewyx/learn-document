@@ -15,7 +15,7 @@ git config --global user.email "。。。。"
 
 未跟踪：文件没有被git管理
 
-已跟踪：已被管理  （又分未修改、修改和暂存——未提交到git仓库） 
+已跟踪：已被管理  （又分未修改、修改和暂存——未提交到本地git仓库） 
 
 ```
 
@@ -28,10 +28,11 @@ git config --global user.email "。。。。"
 
 #### git commit  -m “xxxx”
 
-```bas
+```bash
  将暂存状态文件存(提交)储到仓库中 变为未修改状态
  修改——》未修改   要先暂存再提交也就是  先add 在commit 
   -m 提交信息        -a 提交所有已修改（未跟踪的不会提交）  将修改变为暂存
+  git commit filename -m 'xxx'  #提交指定文件
 ```
 
 ### 2.git log
@@ -64,7 +65,8 @@ git restore --staged filename  取消暂存状态 尽管是删除的文件
 ```bash
  从系统和git仓库中同时删除  #当文件处于修改状态是无法删除   
  git rm filename -f  #强制删除 无论状态
- git rm --cached <file/file parth> #把文件从暂存区域移除,但仍保留本地  文件   当要移除的是文件夹时要使用递归移除 -r
+ git rm --cached <file/file parth> #把文件从暂存区域移除,但仍保留本地文件   当要移除的是文件夹时要使用递归移除 -r
+                                   #会把远程服务器文件/文件夹删除   
 ```
 
 ### 6.git mv
@@ -186,7 +188,7 @@ git push 远程仓库 --delete 标签名/分支名 #删除远程仓库标签
 
 ### git ignore
 
-​	·默认情况下，git会监视我们文件夹中所有文件，但有些文件我们不希望被git管理。可以通过在项目文件夹中添加一个.gitignore文件，来设置那些需要git忽略的文件
+- 默认情况下，git会监视我们文件夹中所有文件，但有些文件我们不希望被git管理。可以通过在项目文件夹中添加一个.gitignore文件，来设置那些需要git忽略的文件
 
 ![](C:\Users\LENOVO\Desktop\练习文件\360截图20230207135408608.jpg)
 

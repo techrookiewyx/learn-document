@@ -355,6 +355,30 @@ p标签中不能放任何块元素
 - article：独立文档
 - section：当其他标签无法表示时使用
 
+### 音视频   2月10日
+
+#### audio 音频标签
+
+向页面中引入音频，默认不允许用户自己控制播放和停止
+
+```bash
+<audio src="xxxx" controls autoplay loop></audio>
+#src指定要引入音频的地址  controls表示允许用户控制播放和暂停  autoplay打开页面音频自动播放，一般不适用    loop音频循环
+<audio>
+	<source scr="">
+	<embed src="" >
+</audio>
+#除了使用src来指定音频路径外   还可以使用source来指定，此外source可以引入多个音频，embed对不支持audio标签的浏览器版本显示
+```
+
+#### video 视频标签
+
+向页面中引入视频，默认不允许用户自己控制播放和停止
+
+```bash
+#用法与audio相同
+```
+
 
 
  

@@ -33,7 +33,19 @@
     }
 
     /* 伪类选择器 */
-    
+    a:link {
+
+      color: black;
+    }
+
+    a:visited {
+      font-size: 50px;
+      color: blueviolet;
+    }
+
+    a:hover {
+      color: red;
+    }
   </style>
 
 </head>
@@ -43,7 +55,7 @@
   <p class="red">我是p</p>
   <h1>去去去</h1>
   <span>啊啊啊</span>
-  <br><br><br>
+  <br><br>
   <h2>关系选择器</h2>
   <div>我是div
     <p>我是div里的p
@@ -52,7 +64,7 @@
     <span>我是div里的span</span>
     <span>我是div里的span2</span>
   </div>
-  <br><br><br><br>
+  <br><br>
   <h2>属性选择器 title当鼠标放上去有提示信息</h2>
   <p title="1111">11111</p>
   <p title="acg">22222</p>
@@ -68,6 +80,11 @@
     <li>d</li>
     <li>f</li>
   </ul>
+  <br><br>
+  <h2>超链接伪元素</h2>
+  <a href="www.baidu.com">正常链接</a><br>
+  <a href="#">访问过的链接</a>
+  <a href="#">当鼠标放到这里变成红色</a>
 </body>
 
 </html>

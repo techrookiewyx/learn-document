@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>导航框架</title>
+</head>
+
+<body>
+  <!-- 简单来说就是通过a.html里的链接让页面内容显示在
+   b.html中,让a.html中a标签的target属性指向frame标签的
+   name属性，即可实现
+  -->
+  <frameset cols="120,*">
+    <frame scr="a.html">
+      <frame scr="b.html" name="showframe">
+  </frameset>
+
+</body>
+
+</html>

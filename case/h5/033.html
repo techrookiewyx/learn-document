@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 该案例是将结合30和32一起 
+  在b.html中给节点添加name属性，再通过a.html中a标签的
+  target属性与第二个框架建立联系
+  -->
+  <frameset cols="120,*">
+    <frame scr="a.html">
+      <frame scr="b.html" name="showframe">
+  </frameset>
+</body>
+
+</html>

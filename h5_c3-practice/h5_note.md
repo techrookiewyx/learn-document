@@ -98,6 +98,12 @@ head标签的内容不会出现在网页中，用户所能看见的内容都在b
 <meta http-equiv="refresh" content="s,rul"> #将网页经过s秒重定向到url这个地址
 ```
 
+#### base
+
+base也放在head中，为页面上的所有链接规定默认地址或默认目标
+
+属性有target
+
 #### title
 
 title中的内容会显示在浏览器标题栏，也会作为搜索结果的链接显示该内容
@@ -163,15 +169,20 @@ pre同样为块级元素，但pre会保留源代码中pre标签里内容的格�
  </dl>
 ```
 
+##### 列表符号
+
+使用list-style属性设置列表符号，通常用none去除即可
+
 #### 超链接
 
 使用a标签实现，主要完成页面跳转，a标签可以嵌套任何除了自己的元素
 
 ```BASH
- <a href="xxxxxx" target="">sss</a>
+ <a href="xxxxxx" target="" >sss</a>
  #其中 href为要跳转的链接地址    
  #target打开该链接的方式，其常见的为两个值为_self和_blank，默认为_self在当前页面打开,_blank为在新页面打开
  # 若href的值为javascript:;时，点击此链接不会发生任何改变，单纯作为一个占位符来标识这是一个超链接
+ # text-decoration属性可以设置连接的下划线样式
 ```
 
 ##### 描点链接
@@ -207,11 +218,35 @@ a标签还可以实现本页面跳转,通过给想要跳转的位置的标签一
 用于向当前页面引入一个外部图片
 
 ```bash
-<igm src=""  alt="" height="" width="">
+<igm src=""  alt="" height="" width="" align="" ismap />
 #src代表图片路径  
 #alt代表图片无法加载时的提示信息 其次搜索引擎会根据alt中的内容来识别图片
 #heigh和width分别设置图片的高度和宽度，如果只设置一个另一个会等比缩放
+#align有left、right、center、top、middle、bottom（默认）值，top文本顶部与图像顶部对齐，bottom文本底部与图像底部对齐
+#ismap属性将图像定义为服务器端图像映射，当用户在 ismap 图像上单击了某处时，浏览器会自动把鼠标的 x、y 位置（相对于图像的左上角）发送到服务器端,需要搭配a标签href属性才有效
 ```
+
+##### map和aera（自结束标签）
+
+- map标签定义一个客户端图像映射（指带有可点击区域的一幅图像）
+- area标签定义图像映射中可点击的区域，area 元素总是嵌套在 map标签中，下面介绍area标签常用属性和值
+	1. shape：定义图像映射中可点击区域的形状   有default、rect、circ、poly四个常用值代表全部区域、矩形、原型、多边形
+	2. href：定义此区域的目标地址
+	3. coords：定区域的 x 和 y 坐标，圆形坐标三个参数（x，y，r），x和y定义圆心位置，r定义圆的半径。矩形左边有四个参数（x1,y1,x2,y2），第一个坐标是矩形的一个角的顶点坐标，另一对坐标是对角的顶点坐标
+
+```html
+<img src="xxx" usemap="#planetmap" />
+<map name="planetmap" id="planetmap">
+  <area shape="circle" coords="180,139,14" href ="venus.html" />
+  <area shape="circle" coords="129,161,10" href ="mercur.html" />
+  <area shape="rect" coords="0,0,110,260" href ="sun.html" />
+</map>
+<!--
+  img中的usemap属性指向map中的id或name属性，所以我们应同时向 map添加id和name属性
+-->
+```
+
+
 
 ##### 常见图片格式和特点
 
@@ -319,24 +354,34 @@ a标签还可以实现本页面跳转,通过给想要跳转的位置的标签一
 		#checkbox同rodio一样，通常设置相同的名字
 		```
 
+- 当action中内容为MAILTO:xxxx@xxx.com时会以邮件显示将表单内容发送到该邮箱
+
 ###### label标签
 
 - <label> 标签为 input 元素定义标注，label通过id绑定一个表单元素，当点击label标签内的文本时，浏览器就会自动将焦点选择对应的表单元素，用来增加用户体验
 
-```bash
+```html
 性别：<label for="male">男</label><input type="radio" name="sex" id="male">
      <label for="famale">女</label><input type="radio" name="sex" id="famale">
-#label标签的for属性与input的id对应      
+<!--label标签的for属性与input的id对应-->    
 ```
+
+###### fieldset
+
+fieldset 元素可将表单内的相关元素分组，fieldset标签将表单内容的一部分打包，生成一组相关表单的字段。
+
+![](../../练习文件/h5-css3/表单fieldset.jpg)
+
+legend元素为fieldset元素定义标题
 
 ##### select下拉列表
 
-```bash
+```html
 <select>
       <option>1</option>
       <option selectd="selected">2</option>
 </select>
-# selected表示设置其为默认选项
+<!--selected表示设置其为默认选项-->
 ```
 
 ##### textarea文本域

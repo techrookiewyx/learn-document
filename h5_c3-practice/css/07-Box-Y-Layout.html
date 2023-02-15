@@ -10,16 +10,18 @@
     .box1 {
       width: 200px;
       height: 200px;
-      background-color: red;
-      overflow: hidden;
+      background-color: red;    
     }
-
+    .box1::before{
+      content: "";
+      display: table;
+    }
     .box2 {
       width: 100px;
       background-color: #bfa;
-      height: 300px;
+      height: 100px;
+       margin-top: 50px;
       /* 当子元素的大小超过父元素，则会产生溢出 */
-      
     }
   </style>
 </head>

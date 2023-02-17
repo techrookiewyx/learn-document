@@ -82,7 +82,7 @@ font: style weight size/line-height famliy;
   */  
   @font-face{
       font-family:"luoli";    给字体起一个名
-      scr:url();    字体路径
+      scr:url();    字体路径/
   }
   ```
 
@@ -97,6 +97,53 @@ font: style weight size/line-height famliy;
 	其属性值也可以是数字（不加单位），400=normal  700=bold
 
 - font-style：设置文本样式   其常用属性有 italic（倾斜）
+
+#### 文本
+
+##### 行高
+
+行高指的是文字占有的实际高度，我们可以通过line-height设置字体的行高
+
+- 行高可以使指定大小（px、em），也可是一个整数（行高将会是字体的指定倍数）
+- 字体框时字体存在的格子，设置font-size就是设置字体框的高度
+- 行高会在字体框的上下平均分配
+- 将行高和高度设置为一样的值，使单行文字垂直居中，行高还可以用来设置文字的行间距（行间距=行高减去字体大小）
+
+##### 水平对齐和垂直对齐
+
+- text-align  文本水平对齐方式，可选值left、right、center、justify（两端对齐）
+- vertical-align 设置元素垂直对齐方式，可选值baseline（默认值 基线对齐）、top（顶部对齐）、bottom、middle
+
+##### 文本溢出处理
+
+text-voerflow设置文本溢出的显示方式，其属性值有clip（修剪文本）、ellipsiss（显示省略符号来代表被修剪的文本）、string（使用给定的字符串来代表被修剪的文本）
+
+##### 文本修饰
+
+1. 下划线
+
+```css
+a{
+    text-decoration: underline color style;
+ /*   通过text-decoration属性设置来修饰文本,可选值有voerline（上划线）、underlin（下划线）、line-through（删除线）、none（无），color可以指定其颜色，style指定样式（类似边框）
+   
+    */
+}
+```
+
+2. 多余文字省略号显示
+
+```css
+p{
+    white-space: nowrap; 
+    overflow: hidden;
+    text-voerflow: ellipsis;
+}
+/*
+  white-space设置网页如何处理空白
+  可选值normal(默认)、nowrap（不换行）、pre（与pre标签效果相同）
+*/
+```
 
 #### display
 
@@ -120,7 +167,7 @@ font: style weight size/line-height famliy;
 	background-positon: x y;
 	/*
 	x和y代表坐标可以是方位无顺序要求(left、right、bottom、top、center)  当只写一个值如right则水平靠右，垂直居中  
-	也可以是具体值（第一个值一个是x轴、第二个值是y轴）  px或者百分比   当只写一个值，垂直居中
+	也可以是具体值（第一个值一个是x轴、第二个值是y轴）  px或者百分比   当只写一个值，垂直居中或水平居中
 	
 	上述两种方式可以混合使用
 	*/
@@ -135,10 +182,8 @@ font: style weight size/line-height famliy;
 ##### 复合写法
 
 ```css
-background: color url() no-repeat fixed  centr top;
+background: color url() no-repeat  fixed  centr top;
 ```
-
-
 
 ## 继承
 
@@ -587,6 +632,8 @@ https://flukeout.github.io/
 
 我们可以通过outline来为元素设置轮廓他的显示效果及用法和border一样，但它不会改变盒子大小，也不会影响其他元素的布局
 
+- 可以通过outline-offset来给轮廓和边框之间设置距离，同样不占用空间
+
 ### 阴影
 
 通过box-shadow来给元素设置阴影效果，不影响页面布局
@@ -710,7 +757,71 @@ positon：absolute（绝对定位） 需要设置偏移量（offset）改变元�
 
 position：sticky（粘滞定位） 粘滞定位特点和相对定位基本一致，不同的是粘滞定位可以在元素到达某一位置时将其固定
 
+## 图标字体  2月17日
 
+将图标设置为字体，这样方便我们操作图标的大小、颜色，而且图标字体对比图片不会失真、体积小，一般通过font-face引入图标字体
+
+### font awesome
+
+- 下载好字体库将css和webfonts两个文件夹放入项目目录中   注：这两个文件夹必须在同一目录下
+
+- 将css文件夹下的all.css引入   
+
+#### 使用场景
+
+1. 通过类名引入
+
+```html
+<i class="fas/fab xxx"></i>
+<!--
+通常用i标签标识图标  fas和fab固定格式不能变     xxx查询文档找到想要使用的图标类名   
+-->
+
+```
+
+2. 找到要设置图标的元素通过before或after，在content中设置编码和字体样式
+
+```css
+li:before{
+    content:"xxx";   图标编码，通过font awesome文档查询
+    font-familt:"Font Awesome 5 Free / Font Awesome 5 Brands" 这两种是免费的      
+}
+/* 使用Font Awesome 5 Brands时需要加上 font-weight：900  */
+```
+
+3. 通过实体的方式来设置图标
+
+```html
+<span class="fas / fab">&#x;</span>
+<!-- 在&#x后加上图标编码 -->
+```
+
+### Icon font 阿里图标字体库 (用户上传涉及版权)
+
+Icon font使用方式比较灵活可以当做字体引入，也可以下载图片格式使用，下面讲解使用方法
+
+1. 将需要使用的图标加入购物车
+2. 在购物车中添加自己的项目，让后把添加到购物车中的图标添加至项目
+3. 图标管理->我的项目中找到图标，将图标下载至本地（这里边包含使用说明）
+4. 将下载好的文件添加到个人项目中，引入iconfont.css文件
+
+#### 使用场景
+
+1. 通过类引入
+
+	```html
+	<i class="iconfont  xxx"></i>
+	<!-- 这里iconfont固定,xxx表示想要使用的图标类名（在使用说明里查询） -->
+	```
+
+2. 通过实体引入
+
+	```html
+	<i class="iconfont">&#x</i>
+	<!-- 这里类名固定，让后在&#x后加上图标编码（在使用说明里查询） -->
+	```
+
+	
 
 ## 自定义类
 
@@ -727,7 +838,9 @@ position：sticky（粘滞定位） 粘滞定位特点和相对定位基本一�
 ## 元素居中
 
 - 设置margin为auto，可让子元素在父元素中水平居中显示
-- 想让父元素内文字垂直居中，给父元素设置line-heiht值为其自身的height值
+- 想让元素内文字垂直居中，给元素设置line-heiht值为其自身的height值
+- 文字水平居中使用text-align： center
+- 字体大小不同的文本垂直对齐vertical-align:   middle
 - 绝对定位设置left、right、bottom和top都为0，margin：auto；元素水平垂直居中
 
 ## 隐藏元素

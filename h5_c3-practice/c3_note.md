@@ -51,9 +51,9 @@ css中注释与html不同，css中使用 /*  */
 #声明块就是要为元素设置样式
 ```
 
-### 常用属性
+## 常用属性
 
-#### 字体  font
+### 字体  font
 
 font属性可以同时定义字体类型(黑体)、大小、粗细、字体样式（倾斜）
 
@@ -98,9 +98,11 @@ font: style weight size/line-height famliy;
 
 - font-style：设置文本样式   其常用属性有 italic（倾斜）
 
-#### 文本
+- font-variant 属性设置小型大写字母的字体显示文本，这意味着所有的小写字母均会被转换为大写，但是所有使用小型大写字体的字母与其余文本相比，其字体尺寸更小
 
-##### 行高
+### 文本
+
+#### 行高
 
 行高指的是文字占有的实际高度，我们可以通过line-height设置字体的行高
 
@@ -109,16 +111,16 @@ font: style weight size/line-height famliy;
 - 行高会在字体框的上下平均分配
 - 将行高和高度设置为一样的值，使单行文字垂直居中，行高还可以用来设置文字的行间距（行间距=行高减去字体大小）
 
-##### 水平对齐和垂直对齐
+#### 水平对齐和垂直对齐
 
 - text-align  文本水平对齐方式，可选值left、right、center、justify（两端对齐）
 - vertical-align 设置元素垂直对齐方式，可选值baseline（默认值 基线对齐）、top（顶部对齐）、bottom、middle
 
-##### 文本溢出处理
+#### 文本溢出处理
 
 text-voerflow设置文本溢出的显示方式，其属性值有clip（修剪文本）、ellipsiss（显示省略符号来代表被修剪的文本）、string（使用给定的字符串来代表被修剪的文本）
 
-##### 文本修饰
+#### 文本修饰
 
 1. 下划线
 
@@ -141,11 +143,19 @@ p{
 }
 /*
   white-space设置网页如何处理空白
-  可选值normal(默认)、nowrap（不换行）、pre（与pre标签效果相同）
+  可选值normal(默认，空白被忽略)、nowrap（不换行）、pre（与pre标签效果相同）
 */
 ```
 
-#### display
+#### 文本其他属性
+
+- text-transform属性改变文本中字母大小写样式，其属性值有uppercase（字母大写）、lowercase（字母小写）、capitalize（首字母大写）
+- 文本字符间距：letter-spacing
+- 文本字间距：word-spacing
+- direction 属性规定文本的方向 / 书写方向，其属性值有ltr（从左到右-默认）、rtl（从右到左）
+- unicode-bidi 属性与 direction 属性一起使用，设置或返回是否应重写文本
+
+### display
 
 该属性用来设置元素显示的类型，下面介绍其可选值
 
@@ -155,7 +165,7 @@ p{
 - none：使元素不在页面中显示  
 - table：将元素变成块级表格来显示
 
-#### background
+### background
 
 - 同时设置background-iamge和background-color时图像压在颜色上面
 
@@ -173,17 +183,21 @@ p{
 	*/
 	```
 
-- background-attachment置背景图像是否固定或者随着页面的其余部分滚动
+- background-attachment设置背景图像是否固定或者随着页面的其余部分滚动
 
 	```css
 	background-attachment: fixed(固定的)/scroll(滚动的，它是默认值)
 	```
 
-##### 复合写法
+#### 复合写法
 
 ```css
 background: color url() no-repeat  fixed  centr top;
 ```
+
+## 其他属性
+
+- cursor规定鼠标指针放在一个元素边界范围内时所用的光标形状（形状）  属性太多具体请参考文档
 
 ## 继承
 
@@ -358,7 +372,7 @@ ul>li:fitst-child{ }
 
 ![](../../练习文件/h5-css3/c3/伪类选择器.jpg)
 
-#### 超链接伪类选择器   
+#### 超链接伪类选择器
 
 - a:link 表示未访问过的链接的/正常的链接
 
@@ -385,6 +399,8 @@ ul>li:fitst-child{ }
 	```
 
 - a:active   表示鼠标点击的状态   此伪类不是a标签专用
+
+- a:hover 必须位于 a:link 和 a:visited 之后才能生效，a:active 必须位于 a:hover 之后才能生效
 
 ### 伪元素选择器 （不存在的元素）
 
@@ -701,10 +717,6 @@ BFC是css中的一个隐函属性，设置bfc的元素会变成一个独立的�
 	![](../../练习文件/h5-css3/c3/clear解决塌陷.jpg)
 
 	由于after伪元素的内容默认是一个行内元素不会独占一行，所以要在里面设置display把其换成块级元素
-
-
-
-
 
 ## 定位 position（2月16日）不会大量使用
 

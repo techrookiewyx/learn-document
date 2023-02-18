@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./icon/iconfont.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .clearfix::after,
+      .clearfix::after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      .head {
+        background-color: #e3e4e5;
+        border-bottom: 1px solid #ddd;
+        font: 12px "微软雅黑";
+        height: 30px;
+        line-height: 30px;
+      }
+
+      .head_nav {
+        width: 1190px;
+        color: #999;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+      .head_nav a:hover,
+      .free,
+      .buy {
+        color: red;
+      }
+      a {
+        color: #999;
+        text-decoration: none;
+      }
+      .part_left {
+        float: left;
+        width: 58px;
+      }
+      .part_left:hover > .city_list {
+        display: block;
+      }
+      .current_city {
+        border: 1px solid transparent;
+        position: relative;
+        z-index: 1;
+      }
+      .part_left:hover .current_city {
+        background-color: #fff;
+        border: 1px solid rgb(204, 204, 204);
+        border-bottom: none;
+        padding-bottom: 1px;
+      }
+      .part_left .city_list {
+        width: 320px;
+        height: 436px;
+        border: 1px solid rgb(204, 204, 204);
+        display: none;
+        position: absolute;
+        box-shadow: 0 2px 2px rgba(204, 204, 204, 0.2);
+        top: 30px;
+        left: 0;
+      }
+      .part_left a {
+        display: block;
+      }
+
+      .part_left a i {
+        font-size: 13px;
+        color: red;
+        margin: 0 6px;
+      }
+
+      .head_nav .part_right {
+        float: right;
+      }
+
+      .head_nav .part_right li {
+        list-style: none;
+        float: left;
+      }
+      .part_right .line {
+        width: 1px;
+        height: 10px;
+        background-color: #999;
+        margin: 10px 12px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="head">
+      <div class="head_nav clearfix">
+        <div class="part_left">
+          <div class="current_city">
+            <a href=""><i class="iconfont icon-position-fill"></i>北京</a>
+          </div>
+          <div class="city_list">sadas</div>
+        </div>
+        <ul class="part_right">
+          <li><a href="">你好,请登录</a></li>
+          <li><a class="free" href="">免费注册</a></li>
+          <li class="line"></li>
+          <li><a href="">我的订单</a></li>
+          <li class="line"></li>
+          <li><a href="">我的京东</a></li>
+          <li class="line"></li>
+          <li><a class="buy" href="">企业采购</a></li>
+          <li class="line"></li>
+          <li>客户服务</li>
+          <li class="line"></li>
+          <li>网站导航</li>
+          <li class="line"></li>
+          <li>手机京东</li>
+          <li class="line"></li>
+          <li><a href="">网站无障碍</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

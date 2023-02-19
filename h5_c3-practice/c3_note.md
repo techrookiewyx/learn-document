@@ -169,7 +169,11 @@ p{
 
 - 同时设置background-iamge和background-color时图像压在颜色上面
 
-- background-clip： 规定背景颜色的显示区域
+- background-clip： 规定背景颜色的显示区域，其属性值有border-box（默认值）、padding-box（背景不在边框显示）、content-box（背景只出现在内容区）
+
+- background-origin：背景图片偏移量计算的原点，其属性值有padding-box（默认值从内边距处开始计算）、content-box（背景图片原点从内容区开始计算）、border-box（从边框处开始计算）
+
+- background-size ：设置背景图片大小 contain （图片内容完全显示）
 
 - 用background-position来设置图像在元素中的位置
 
@@ -193,11 +197,62 @@ p{
 
 ```css
 background: color url() no-repeat  fixed  centr top;
+/*
+   background-size要写在background-position后面用/分隔,origin写在clip前边，其他没有顺序规定
+*/
 ```
+
+#### 精灵图（2月19日）
+
+解决浏览器资源加载，把多个图片合成一张就不用浏览器每次都发送请求，提高用户体验，但精灵图只适用于背景图。使用步骤如下
+
+1.  确认好要使用的图标，测量图标大小
+2. 创建相应大小的元素，将图片设置为元素的背景图片
+3. 设置背景图片偏移量，以正确显示图标
+
+#### 线性渐变
+
+从一个颜色向另一个颜色过渡，渐变是图片需要background-image设置，线性渐变是沿着一条直线改变
+
+```css
+.box{
+    background-image:linear-gradient(to right,x apx,y,....);
+}
+/* 
+   通过linear-gradiant()属性值设置线性渐变，x和y都表示颜色，表示从x向y发生改变（默认从上向下），可以写多种颜色，默认情况下这多种颜色平均分配
+   apx表示从a像素开始向y颜色渐变，apx的地方x颜色最浓
+   加上to right表示从左向右变，同理可以换成to top、to left、
+   也可以在颜色前加上deg表示旋转度数
+*/
+```
+
+#### 径向渐变
+
+从中心向四周呈放射性变化，基本用法与线性渐变一致，不同的是默认情况下其圆心形状由元素宽高决定，但可以通过一以下方式改变
+
+```css
+.box{
+    background-image:radial-gradient(a b，at c d,x,y,....);
+}
+/* 
+  a b（像素）共同指定径向渐变大小
+  at c d（像素）指定渐变圆心的位置，cd也可以为方向值
+*/
+语法：
+.box{
+    background-image:radial-gradient(大小，at 位置,颜色1 位置,颜色2 位置,....);
+}
+/*
+    大小可以是circle、ellipse（椭圆）、closest-side/corner（近边/角）、farthest-side/corner（远边/角），也可是两个指定像素值（空格隔开）
+    
+*/
+```
+
+
 
 ## 其他属性
 
-- cursor规定鼠标指针放在一个元素边界范围内时所用的光标形状（形状）  属性太多具体请参考文档
+- cursor规定鼠标指针放在一个元素边界范围内时所用的光标形状（形状）  属性太多具体参考文档
 
 ## 继承
 
@@ -748,8 +803,9 @@ positon：absolute（绝对定位） 需要设置偏移量（offset）改变元�
 1. 设置绝对定位的元素的会脱离文档流，会改元素的性质（行内变成块，块的宽高默认由内容决定）
 2. 设置绝对定位的元素会提升层级
 3. 绝对定位元素参照于该元素的包含块进行定位
+4. clip 属性剪裁绝对定位元素，其值是shape设置元素的形状。唯一合法的形状值是：rect (*top*, *right*, *bottom*, *left*)
 
-#### 绝对定位水平布局
+#### 绝对定位水平布局 
 
 相比于正常水平布局多了两个值（left和right），9个值相加等于包含块内容区的宽度，规则和之前过度约束中等式一样，只不过现在调整的是right，可以设置auto的有width、margin、left和right
 
@@ -833,7 +889,6 @@ Icon font使用方式比较灵活可以当做字体引入，也可以下载图�
 	<!-- 这里类名固定，让后在&#x后加上图标编码（在使用说明里查询） -->
 	```
 
-	
 
 ## 自定义类
 
@@ -859,5 +914,8 @@ Icon font使用方式比较灵活可以当做字体引入，也可以下载图�
 
 - 给元素设置display：none，不占据任何空间
 - 给元素设置visibility：none
-	- 其属性有visible（默认值）可见、hidden隐藏元素（元素依然占用空间）、
+	- 其属性有visible（默认值）可见、hidden隐藏元素（元素依然占用空间）
 
+## 浏览器资源加载
+
+当我们在代码中中引入图片、视频等外部资源，当我们首次访问页面时，需要浏览器单独发送请求加载，浏览器的资源加载是按需加载的（用就加载，不用不加载）

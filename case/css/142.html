@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .func {
+        width: 600px;
+        margin: 50px auto;
+      }
+      .visible,
+      #hidden {
+        background-color: green;
+        color: white;
+        border: 1px solid #a6d8a8;
+        padding: 10px;
+        text-align: center;
+      }
+      #hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>css配合js来实现元素隐藏显示</h1>
+    <div class="func" onmouseover="muFunction()" onmouseout="mufun2()">
+      <div class="visible">放到这里看看</div>
+      <div id="hidden">
+        <p>该面板包含一个 div 元素，默认情况下该元素是隐藏的（display: none）。</p>
+        <p>它使用 CSS 进行样式设置，我们使用 JavaScript 来显示它（display: block）。</p>
+        <p>
+          工作原理：请注意，带有 class="flip" 的 p 元素有 onclick 属性。当用户单击 p 元素时，将执行一个名为 myFunction()
+          的函数，该函数将 id="panel" 的 div 样式从 display:none（隐藏）更改为 display:block（可见）。
+        </p>
+        <p>您将在我们的 JavaScript 教程中学到有关 JavaScript 的更多知识。</p>
+      </div>
+    </div>
+    <script>
+      function muFunction() {
+        document.getElementById("hidden").style.display = "block";
+      }
+      function mufun2() {
+        document.getElementById("hidden").style.display = "none";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .header,
+      .footer {
+        background-color: grey;
+        color: white;
+        padding: 20px;
+      }
+      .clearfix::after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      .content ul {
+        width: 15%;
+        list-style-type: none;
+        float: left;
+      }
+      .content ul li {
+        padding: 5px;
+        background-color: #33b5e5;
+        margin: 15px 20px 0 20px;
+        text-align: center;
+      }
+      .content ul li:hover {
+        background-color: #0099cc;
+      }
+      .atricle {
+        float: left;
+        width: 75%;
+        box-sizing: border-box;
+        padding: 20px 10px;
+      }
+       p{
+        box-sizing: border-box;
+        padding: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header"><h1>Shanghai</h1></div>
+    <div class="content clearfix">
+      <ul>
+        <li>The Flight</li>
+        <li>The City</li>
+        <li>The Island</li>
+        <li>The Food</li>
+      </ul>
+      <div class="atricle">
+        <h2>The City</h2>
+        <p>
+          Shanghai is one of the four direct-administered municipalities of the People's Republic of China. Welcome to
+          Shanghai!Shanghai is one of the four direct-administered municipalities of the People's Republic of China.
+          Welcome to Shanghai!Shanghai is one of the four direct-administered municipalities of the People's Republic of
+          China. Welcome to Shanghai!
+        </p>
+        <p>
+          You will learn more about web layout and responsive web pages in a later chapter. You will learn more about
+          web layout and responsive web pages in a later chapter.You will learn more about web layout and responsive web
+          pages in a later chapter.
+        </p>
+      </div>
+    </div>
+    <div class="footer">Footer Text</div>
+  </body>
+</html>

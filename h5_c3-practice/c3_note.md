@@ -139,7 +139,7 @@ a{
 p{
     white-space: nowrap; 
     overflow: hidden;
-    text-voerflow: ellipsis;
+    text-overflow: ellipsis;
 }
 /*
   white-space设置网页如何处理空白
@@ -253,6 +253,7 @@ background: color url() no-repeat  fixed  centr top;
 ## 其他属性
 
 - cursor规定鼠标指针放在一个元素边界范围内时所用的光标形状（形状）  属性太多具体参考文档
+- opacity 属性设置元素的不透明级别
 
 ## 继承
 
@@ -661,8 +662,8 @@ https://flukeout.github.io/
 使用overflow属性设置父元素如何处理溢出的子元素，其属性值有
 
 - visible：默认值  不处理（可见）
-- hidden：隐藏溢出的内容 
-- scroll：溢出部分以滚动条形式显示  双方向滚动条
+- hidden：隐藏溢出的内容 （溢出部分裁剪）
+- scroll：溢出部分以滚动条形式显示  双方向滚动条（溢出部分裁剪）
 - auto：根据需要生成滚动条
 
 ### 外边距折叠
@@ -805,17 +806,17 @@ positon：absolute（绝对定位） 需要设置偏移量（offset）改变元�
 3. 绝对定位元素参照于该元素的包含块进行定位
 4. clip 属性剪裁绝对定位元素，其值是shape设置元素的形状。唯一合法的形状值是：rect (*top*, *right*, *bottom*, *left*)
 
-#### 绝对定位水平布局 
+#### 绝对定位水平布局
 
 相比于正常水平布局多了两个值（left和right），9个值相加等于包含块内容区的宽度，规则和之前过度约束中等式一样，只不过现在调整的是right，可以设置auto的有width、margin、left和right
 
-- 设置left和right为0，margin：0 auto让元素水平方向居中
+- 设置left和right为0，margin：0 auto让元素水平方向居中（前提是设置了绝对定位的元素有宽度）
 
 #### 绝对定位垂直布局
 
  同上边水平布局相同，只是将left和right换成了bottom和top，与普通垂直布局不同必须满足等式
 
-- 设置bottom和top为0，margin：auto 0让元素垂直方向居中（注：在正常文档流中不可以）
+- 设置bottom和top为0，margin：auto 0让元素垂直方向居中（前提是设置了绝对定位的元素有高度）（注：在正常文档流中不可以）
 
 ### 固定定位
 
@@ -889,6 +890,53 @@ Icon font使用方式比较灵活可以当做字体引入，也可以下载图�
 	<!-- 这里类名固定，让后在&#x后加上图标编码（在使用说明里查询） -->
 	```
 
+## 过渡 transition
+
+ 过渡就是从一个状态到另一种状态，过渡可以设置一个属性发生变化时的切换方式，过渡必须是从一个有效值向另一个有效值进行切换，其属性如下
+
+- transition-property：设置对哪些CSS属性（height、width）执行过渡，各个属性用逗号隔开，也可以用all（属性值）对所有属性执行过渡，只要是可以计算的、有数值的属性都可以执行过渡
+- transition-duration：设置过渡效果执行时间（一般是以秒和毫秒作为单位，1s=1000ms）
+- transition-timing-function：规定速度效果的速度曲线（过渡快慢），其属性值有ease（默认值，慢速开始-先加速-在减速）、linear（匀速运动）、ease-in（加速运动）、ease-out（减速运动）、cubic-bezier（）贝塞尔曲线表达、steps（）分步执行
+- transition-delay：过渡效果的延迟（从什么时候开始执行过渡）
+- 其中必须设置property和duration
+
+### 复合写法
+
+过渡的复合写法没有顺序要求，但要注意如果同时设置延迟时间和过渡时间，则第一个时间代表过渡时间第二个时间代表延迟时间
+
+## 动画 animation
+
+### 关键帧
+
+动画执行中各个阶段的变化，一秒钟内内容变化的个数就是帧数，css中设置关键帧需要使用@keyframes，其具体设置方法如下
+
+```css
+@keyframes 关键帧名称{
+   from{                  /* from表示动画从哪开始,to也可以写为0% */
+      margin-left:0;
+    }             
+  to   {                 /* to表示从哪结束，from也可以写为100% */
+        margin-left:700px; 
+    }		    
+}
+```
+
+### 动画设置
+
+为想要添加动画的元素设置动画属性，动画常用属性如下
+
+- animation-name：这里就是之前设置的关键帧的名称
+- animation-duration：动漫执行时间跟过渡用法一致
+- animation-delay：设置动画延迟
+- animation-timing-function：同上过渡一致
+- animation-iteration-count：动画执行次数，其属性值有infinite（执行无限次）
+- animation-direction：指定动画运行方向，其属性值有normal（默认值，从from到to执行）、reserve（从to到from执行）、alternate（设置重复后先from到to，再从to到from）、alternate-reserve（设置重复后先从to到from，再从from到to）
+- animation-play-state：设置动画执行状态，其属性有running（运行）、paused（暂停）
+- animation-fill-mode：设置动画填充模式，其属性值有none（默认值，在没有设置动画执行次数时，执行一次后回到元素 初始位置）、forwards（在没有设置动画执行次数时，执行一次后停止在关键帧的结束位置）、backwards（动画延迟等待时，元素就处于from的状态）、both（结合forwards和backwards）
+
+### 复合写法
+
+动画的复合写法也没有顺序要求，但要注意如果同时设置延迟时间和过渡时间，则第一个时间代表过渡时间第二个时间代表延迟时间
 
 ## 自定义类
 
@@ -908,7 +956,8 @@ Icon font使用方式比较灵活可以当做字体引入，也可以下载图�
 - 想让元素内文字垂直居中，给元素设置line-heiht值为其自身的height值
 - 文字水平居中使用text-align： center
 - 字体大小不同的文本垂直对齐vertical-align:   middle
-- 绝对定位设置left、right、bottom和top都为0，margin：auto；元素水平垂直居中
+- 绝对定位设置left、right、bottom和top都为0，margin：auto；元素水平垂直居中（前提是该元素有宽度和高度）
+- 给一个父元素设置display：table，会将元素设置为单元格，可以用vertical-align控制其中元素垂直方向的位置（了解）
 
 ## 隐藏元素
 

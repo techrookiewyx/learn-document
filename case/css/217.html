@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body,
+      h1 {
+        margin: 0;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        width: 200px;
+        background-color: #f1f1f1;
+        position: fixed;
+        overflow: auto;
+        height: 100%;
+      }
+      ul li a {
+        text-decoration: none;
+        display: block;
+        color: black;
+        padding: 8px 16px;
+      }
+      li a.active {
+        background-color: green;
+        color: white;
+      }
+      li a:hover:not(.active) {
+        color: white;
+        background-color: #555;
+      }
+      .content {
+        margin-left: 250px;
+        padding-top: 16px;
+      }
+      @media screen and (max-width: 1200px) {
+        ul.topnav {
+          width: 100%;
+          height: auto;
+          position: relative;
+        }
+        ul.topnav li a {
+          float: left;
+          padding: 15px;
+        }
+        div.content {
+          margin-left: 0;
+        }
+      }
+      @media screen and (max-width: 800px) {
+        ul.topnav li a {
+          text-align: center;
+          float: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="topnav">
+      <li><a class="active" href="">Home</a></li>
+      <li><a href="">News</a></li>
+      <li><a href="">Contact</a></li>
+      <li class="right"><a href="">About</a></li>
+    </ul>
+    <div class="content">
+      <h1>响应式侧导航栏实例</h1>
+      <p>当屏幕尺寸为 900 像素或更小时，此例使用媒体查询将 sidenav 转换为顶部导航栏。</p>
+      <p>我们还为屏幕小于等于 400 像素的屏幕添加了媒体查询，它将垂直堆叠并居中放置导航链接。</p>
+      <p>您稍后将在我们的 CSS 教程中学到有关媒体查询和响应式 Web 设计的更多知识。</p>
+      <p><b>请调整浏览器窗口的大小以查看效果。</b></p>
+    </div>
+  </body>
+</html>

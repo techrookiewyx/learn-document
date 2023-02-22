@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #navlist {
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+      }
+      #navlist li {
+        list-style-type: none;
+        float: left;
+        margin-right: 20px;
+      
+      }
+      #navlist a {
+        display: block;
+        height: 44px;
+        width: 44px;
+      }
+      #home a{
+        background: url(https://www.w3school.com.cn/i/css/navsprites.gif) 0 0;
+      }
+      #prev a{
+        background: url(https://www.w3school.com.cn/i/css/navsprites.gif) -45px 0;
+      }
+      #next a{
+        background: url(https://www.w3school.com.cn/i/css/navsprites.gif) -91px 0;
+      }
+      #home a:hover{
+        background: url(https://www.w3school.com.cn/i/css/navsprites.gif) 0 -45px;
+      }
+      #prev a:hover {
+        background: url(https://www.w3school.com.cn/i/css/navsprites.gif) -45px -45px;
+      }
+      #next a:hover {
+        background: url(https://www.w3school.com.cn/i/css/navsprites.gif) -91px -45px;
+      }
+    
+    </style>
+  </head>
+  <body>
+    <ul id="navlist">
+      <li id="home"><a href=""></a></li>
+      <li id="prev"><a href=""></a></li>
+      <li id="next"><a href=""></a></li>
+    </ul>
+  
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .up {
+        position: relative;
+      }
+      .upbtn {
+        border: none;
+        padding: 16px;
+        color: white;
+        background-color: #4caf50;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      .upbtn:hover {
+        background-color: #3e8e41;
+      }
+      .upcontent {
+        position: absolute;
+        min-width: 120px;
+        background-color: #f9f9f9;
+        z-index: 1;
+        left: 0;
+        display: none;
+        box-shadow: 0 3px 8px 8px rgba(0, 0, 0, 0.2);
+      }
+      .upcontent a {
+        text-decoration: none;
+        color: black;
+        display: block;
+        padding: 12px 16px;
+      }
+      .upcontent a:hover {
+        background-color: #f1f1f1;
+      }
+      .up:hover .upcontent{
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>左右对齐的下拉菜单</h1>
+    <div class="up" style="float: left;">
+      <button class="upbtn">Left</button>
+      <div class="upcontent">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+    </div>
+    <div class="up" style="float: right;">
+      <button class="upbtn">Right</button>
+      <div class="upcontent" style="right: 0;">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+    </div>
+  </body>
+</html>

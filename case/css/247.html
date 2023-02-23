@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .main {
+        background-color: #f2f2f2;
+        border-radius: 15px;
+        padding: 20px;
+      }
+      input[type=text],select,textarea{
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+      }
+      .row{
+        overflow: hidden;
+      }
+      .col-25 {
+        float: left;
+        width: 25%;
+        margin-top: 6px;
+       
+      }
+      .col-75 {
+        float: left;
+        width: 75%;
+        margin-top: 6px;
+      }
+      label {
+        padding: 12px 12px 12px 0;
+        display: inline-block;
+      }
+      @media only screen and (max-width:900px) {
+          .col-25,.col-75{
+            width: 100%;
+            margin-top: 0;
+          }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>响应式表单</h1>
+    <div class="main">
+      <form action="">
+        <div class="row">
+          <div class="col-25"><label for="">姓名</label></div>
+          <div class="col-75">
+            <input type="text" name="username" id="username" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25"><label for="">简介</label></div>
+          <div class="col-75">
+            <input type="text" name="username" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25"><label for="">地区</label></div>
+          <div class="col-75">
+            <select name="area">
+              <option value="shanghai">上海</option>
+              <option value="beijing">北京</option>
+              <option value="tianjin">天津</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25"><label for="">简介</label></div>
+          <div class="col-75">
+            <textarea name="" id="" style="height: 200px;"></textarea>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

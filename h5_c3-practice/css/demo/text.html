@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 800px;
+        border: 1px red solid;
+        /* text-align 文本的水平对齐
+                    可选值：
+                        left 左侧对齐
+                        right 右对齐
+                        center 居中对齐
+                        justify 两端对齐 */
+        text-align: justify;
+        font-size: 50px;
+      }
+
+      span {
+        font-size: 20px;
+        border: 1px blue solid;
+        /* vertical-align 设置元素垂直对齐的方式
+                    可选值：
+                        baseline 默认值 基线对齐
+                        top 顶部对齐
+                        bottom 底部对齐
+                        middle 居中对齐 */
+        vertical-align: baseline;
+      }
+
+      p {
+        border: 1px red solid;
+      }
+
+      img {
+        vertical-align: bottom;
+      }
+      .box1 {
+        font-size: 50px;
+        font-family: 微软雅黑;
+        /* text-decoration 设置文本修饰
+                    可选值：
+                        none 什么都没有
+                        underline 下划线
+                        line-through 删除线
+                        overline 上划线 */
+        text-decoration: underline red dotted;
+      }
+
+      .box2 {
+        width: 200px;
+        /* white-space 设置网页如何处理空白
+                    可选值：
+                        normal 正常
+                        nowrap 不换行
+                        pre 保留空白 */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    </style>
+  </head>
+  <body>
+    <div>今天天气 Helloyx<span>真不错 Hello</span>！</div>
+    <p>
+      <img src="../images/01.jpg" alt="" />
+    </p>
+    <div class="box2">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, minus fugit in perspiciatis reprehenderit
+      consequuntur aspernatur repellat cumque quidem asperiores quaerat placeat, tenetur vel veritatis deserunt numquam.
+      Dolores, cupiditate enim.
+    </div>
+
+    <div class="box1">今天天气真不错</div>
+  </body>
+</html>

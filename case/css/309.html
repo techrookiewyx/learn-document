@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div{
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+      transition: width 2s;
+      margin-bottom: 20px;
+    }
+    .b1{
+      transition-timing-function: linear;
+
+    }
+    .b2{
+      transition-timing-function: ease;
+
+    }
+    .b3{
+      transition-timing-function: ease-in;
+
+    }
+    .b4{
+      transition-timing-function: ease-out;
+
+    }
+    .b5{
+      transition-timing-function: ease-in-out;
+
+    }
+    div:hover{
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+  <h1>过渡的速度曲线</h1>
+  <h2>将鼠标放到下面不同div上，看看有什么变化</h2>
+  <div class="b1"></div>
+  <div class="b2"></div>
+  <div class="b3"></div>
+  <div class="b4"></div>
+  <div class="b5"></div>
+</body>
+</html>

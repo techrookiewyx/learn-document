@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 300px;
+        height: 100px;
+        background-color: yellow;
+        border: 1px solid black;
+      }
+      .b1 {
+        transform: matrix(1, -0.3, 0, 1, 0, 0);
+      }
+      .b2 {
+        transform: matrix(1, 0, 0.5, 1, 150, 0);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>2D变换矩阵</h1>
+    <div>我是一个普通的div</div>
+    <div class="b1">使用 matrix() 方法。</div>
+    <div class="b2">使用 matrix() 方法。</div>
+  </body>
+</html>

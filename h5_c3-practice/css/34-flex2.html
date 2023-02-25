@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+      }
+      ul {
+        width: 800px;
+        height: 240px;
+        border: 5px solid red;
+        display: flex;
+        /* 设置元素是否在弹性容器中自动换行
+              nowrap  默认值，不换行
+              wrap  沿着侧轴的方向自动换行
+              wrap-reverse 沿着侧轴的反方向换行 */
+        /* flex-wrap: wrap-reverse; */
+
+        /* flex-flow：可以同时设置felx-direction和flex-wrap两个属性 */
+        /* flex-flow: column wrap; */
+
+        /* 设置主轴上元素如何排列 */
+        justify-content: space-between;
+      }
+      ul li {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+        text-align: center;
+        line-height: 100px;
+        flex-shrink: 0;
+      }
+      li:nth-child(2) {
+        background-color: #bfa;
+      }
+      ol {
+        margin-top: 100px;
+        width: 300px;
+        height: 800px;
+        line-height: 100px;
+        border: 5px solid red;
+        display: flex;
+        /* 设置侧轴上元素如何排列 */
+        align-items: baseline;
+        flex-wrap: wrap;
+        /* 设置侧轴上有多余可用空间时元素如何排列 */
+        align-content: start;
+      }
+      ol li {
+        width: 100px;
+        font-size: 25px;
+        text-align: center;
+        background-color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>弹性元容器的样式</h1>
+    <ul>
+      <li>1111</li>
+      <li>2222</li>
+      <li>3333</li>
+    </ul>
+    <ol>
+      <li>4444</li>
+      <li>5555
+        <div>5555</div>
+      </li>
+      <li>6666
+        <div>6666</div>
+        <div>6666</div>
+      </li>
+      <li>7777</li>
+      <li>8888</li>
+    </ol>
+  </body>
+</html>

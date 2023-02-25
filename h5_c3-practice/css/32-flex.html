@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+    ul{
+      width: 200px;
+      border: 5px solid red;
+      /* 将ul设置为弹性容器 */
+      display: flex;
+      /* 指定弹性容器中弹性元素的排列方式
+            主轴：弹性元素的排列方向称为主轴
+      */
+      flex-direction: row;
+      /* flex-direction: column; */
+    }
+    li{
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+      text-align: center;
+      line-height: 100px;
+      /* 用来指定弹性元素的伸展系数 */
+      /* flex-grow: 1; */
+      /* 用来指定弹性元素的收缩系数 */
+      flex-shrink: 0;
+    }
+    li:nth-child(2){
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+      弹性布局
+          弹性容器
+              要想使用弹性布局必须先将一个元素设置为弹性容器
+              通过display：flex（块级弹性容器）或display:inline-flex（行内弹性容器）
+          弹性元素
+              弹性容器的子元素（不是后代元素）就是弹性元素（弹性项）
+   -->
+  <h1>弹性布局</h1>
+  <ul>
+    <li>1111</li>
+    <li>2222</li>
+    <li>3333</li>
+  </ul>
+</body>
+</html>

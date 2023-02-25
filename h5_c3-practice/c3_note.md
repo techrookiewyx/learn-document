@@ -84,6 +84,9 @@ font: style weight size/line-height famliy;
       font-family:"luoli";    给字体起一个名
       scr:url();    字体路径/
   }
+  p{
+      font-family:luoli;
+  }
   ```
 
 - font-size：设置文本大小
@@ -152,8 +155,13 @@ p{
 - text-transform属性改变文本中字母大小写样式，其属性值有uppercase（字母大写）、lowercase（字母小写）、capitalize（首字母大写）
 - 文本字符间距：letter-spacing
 - 文本字间距：word-spacing
+- text-index：设置文本缩进
 - direction 属性规定文本的方向 / 书写方向，其属性值有ltr（从左到右-默认）、rtl（从右到左）
 - unicode-bidi 属性与 direction 属性一起使用，设置或返回是否应重写文本
+- text-shadow：x，y，z，color，设置文本阴影
+- word-wrap： 属性允许长单词或 URL 地址换行到行，其属性值有normal（只在允许的断字点换行）、break-word（在长单词或 URL 地址内部进行换行）
+- word-break 属性规定自动换行的处理方法，其属性有normal、break-all（允许在单词内换行）、keep-all（只能在半角空格或连字符处换行）
+- writing-mode 属性规定水平还是垂直地排布文本行，其属性值有horizontal-tb（让文本从左到右水平流动，从上到下垂直流动）、vertical-rl（从上到下，从右到左）、vertical-lr（从上到下，从左到右）
 
 ### display
 
@@ -167,7 +175,7 @@ p{
 
 ### background
 
-- 同时设置background-iamge和background-color时图像压在颜色上面
+- 同时设置background-iamge和background-color时图像压在颜色上面，当设置多张背景图片时，在写url时前面的图片会默认层级比后面的高
 
 - background-clip： 规定背景颜色的显示区域，其属性值有border-box（默认值）、padding-box（背景不在边框显示）、content-box（背景只出现在内容区）
 
@@ -191,6 +199,21 @@ p{
 
 	```css
 	background-attachment: fixed(固定的)/scroll(滚动的，它是默认值)
+	```
+
+- 图像边框
+
+	```css
+	/*在这里，重复图像的中间部分，来创建边框*/
+	div {
+	        border: 10px solid transparent;
+	        border-image:url(https://www.w3school.com.cn/i/border.png) 30 round;
+	        padding: 15px;
+	}
+	
+	/*
+	将round改为stretch,图像的中间部分被拉伸，来创建边框
+	*/
 	```
 
 #### 复合写法
@@ -221,7 +244,7 @@ background: color url() no-repeat  fixed  centr top;
 /* 
    通过linear-gradiant()属性值设置线性渐变，x和y都表示颜色，表示从x向y发生改变（默认从上向下），可以写多种颜色，默认情况下这多种颜色平均分配
    apx表示从a像素开始向y颜色渐变，apx的地方x颜色最浓
-   加上to right表示从左向右变，同理可以换成to top、to left、
+   加上to right表示从左向右变，同理可以换成to top、to left、也可以同时to top left表示从右下向左上
    也可以在颜色前加上deg表示旋转度数
 */
 ```
@@ -240,15 +263,13 @@ background: color url() no-repeat  fixed  centr top;
 */
 语法：
 .box{
-    background-image:radial-gradient(大小，at 位置,颜色1 位置,颜色2 位置,....);
+    background-image:radial-gradient(大小 at 位置,颜色1 位置,颜色2 位置,....);
 }
 /*
     大小可以是circle、ellipse（椭圆）、closest-side/corner（近边/角）、farthest-side/corner（远边/角），也可是两个指定像素值（空格隔开）
     
 */
 ```
-
-
 
 ## 其他属性
 
@@ -372,9 +393,11 @@ p[title=aaa]{ }
 #当鼠标放在1111上时会有aaa的提示信息
 ```
 
-3. a[x^=“b”]{ }   表示选择有属性x且属性值以为b**开头**的a标签
+3. a[x^=“b”]{ }   表示选择有属性x且属性值以为b**开头**的a标签，不能是整个单词
 4. a[x$=“b”]{ }   表示选择有属性x且属性值以为b**结尾**的a标签
 5. a[x*=“b”]{ }   表示选择有属性x且**含有**属性值b的a标签
+5. a[x~=“b”]{ }   表示选择有属性x且**含有**属性值b的a标签
+5. [x|=b]   表示选则所有带有x属性且以b开头的标签（必须是整个单词）
 
 ### 伪类选择器(不是实际存在的类)   （2月12日）
 
@@ -951,6 +974,11 @@ Icon font使用方式比较灵活可以当做字体引入，也可以下载图�
 - translateX()：平移（分X、Y、Z方向），其值可以是像素也可以是百分比（针对自己）
 - rotate()：旋转可以使元素沿着x、y或z轴旋转指定角度，其值是deg（度）正值顺时针、负值逆时针
 - backface-visibility：设置元素是否显示背面
+- scale()：对元素针对其本身大小进行缩放（可以是X轴可以是Y轴，Z轴需要设置3D效果才能看到）
+- skew(x，y)：倾斜    也可以分为skewX（）和skewY（）
+- transform-style:   规定变形如何在 3D 空间中呈现被嵌套的元素，其属性值有preserve-3d（子元素将保留其 3D 位置）、flat（默认值不保留）
+
+transform-origin：设置变形的原点，其属性值有center（默认），可以指定X和Y两个方向的距离来改变原点
 
 ### Z轴平移
 
@@ -961,6 +989,131 @@ html{
     persprctive:800px  /*设置网页的视距为800像素*/
 }
 ```
+
+## 弹性布局
+
+可以使元素更加灵活，可以随着页面的大小而改变，减少浮动布局存在的问题
+
+弹性容器和弹性元素有各自要设置的属性
+
+### 弹性容器
+
+要想使用弹性布局必须先将一个元素设置为弹性容器，有两种方式一种是设置display为flex（块级弹性容器），另一种是设置display为inline-flex（行内弹性容器），其属性如下
+
+- flex-direction：指定弹性容器中弹性元素的排列方式（决定主轴），其属性值可以是column（纵向排列从上向下）、row（默认值，水平排列从左向右）、row-reverse（水平排列从右向左）
+- flex-wrap：设置元素是否在弹性容器中自动换行，其属性值可以是nowrap（默认值，不换行）、wrap（沿着侧轴的方向自动换行）、wrap-reverse（沿着侧轴的反方向换行）
+- flex-flow：可以同时设置felx-direction和flex-wrap两个属性
+- justify-content：设置**主轴**上有多余可用空间时元素如何排列，其属性值有flex-start（沿主轴起始方向排列）、flex-end（沿主轴终止方向排列）、center（居中排列，空白部分均匀分配在两边）、space-around（将空白分配到每个元素两侧）、space-evenly（均匀分配空白）、space-between（均匀分配在元素之间）
+- align-items：设置**侧轴**上元素间如何排列，其属性值可以是stretch（默认值，将一行元素的高度设置为相同的值）、flex-start（沿侧轴起始方向对其）、flex-end（沿侧轴终止方向对齐）。center（居中对齐）、baseline（基线对齐）
+- align-content：设置**侧轴**上有多余可用空间时元素如何排列，其属性值跟justify-content一致
+
+**主轴**：弹性元素的排列方向成为主轴
+
+**侧轴**：与主轴垂直的方向称为侧轴
+
+### 弹性元素
+
+弹性容器的直接子元素就是弹性元素（弹性项），一个元素可以同时是弹性容器和弹性元素，其属性如下
+
+- flex-grow：用来指定弹性元素的伸展系数（当父元素有多余空间时，子元素如何伸展），其属性值可以是数字（默认0表示不伸展，1表示平均分配，值越大分配的空间越多）
+- flex-shrink：用来指定弹性元素的收缩系数（当父元素的空间不足以容纳所有子元素时，子元素如何收缩），其属性值可以是数字（默认1表示等比收缩，0表示不收缩）
+- align-self：用来覆盖当前元素上的align-items
+
+## 响应式布局
+
+
+
+## less （css预处理）
+
+Less是CSS的增强版，增加了许多新特性，less可以使我们编写更少的代码、实现更强大的样式
+
+### css的不足
+
+css中很多变量（——color）和函数兼容性不好
+
+### less的使用
+
+less的语法和css大体一致，浏览器无法直接less代码，必须先将less转换为css（Easy Less插件）
+
+### 变量
+
+```less
+@name:red;  //@开头后面加变量名来声明一个变量 ，冒号后面跟变量值
+@b:box1;
+.box{
+    color:@name;  //使用变量
+}
+
+
+
+.@{b}{     // 当变量以类型出现时要加大括号
+   color:@name;
+    background-image:url("@{b}/1.png")   //以图片地址出现时的格式
+}
+
+
+//使用场景 
+.box1{
+    width:100px;
+    height:$width;  //这样引用后height值为100px
+}
+```
+
+### 父元素和扩展
+
+```less
+.box1{
+    .box2{
+        color:yellow;
+    }
+    >.box3{
+        color:red;     //解析后表示box1的子元素box3
+    }
+    &:hover   // & 就表示外层父元素  
+}
+
+
+
+.p1() {     //当给选择器后边加括号，解析less时css中不会显示.p1的相关属性，实际上是创建了一个mixins，专门给别的选择器复制使用
+  width: 100px;
+  height: 100px;
+}
+.p2:extend(.p1) {    //p2 在p1的基础上扩展（选择器分组 ）
+  color: aquamarine;
+}
+.p3{
+    .p1;   //直接对指定的样式引用，相对于对复制了p1的样式
+}
+```
+
+### 混合函数
+
+混合函数内可以直接定义变量
+
+```less
+.test(@w:100px,@h){  //定义一个带参函数，可以指定默认值 
+    width:@q;
+    height:@h;
+    color:red;
+}
+div{
+    .text(200px,300px);   //调用函数并传参 
+}
+```
+
+#### 其他用法
+
+在less中所有的数值可以直接参与算术运算
+
+```less
+.b1{
+    width:100px+100px;
+    height:100px;
+    border:1px solid black;
+}
+```
+
+- 在当前less文件引入其他less文件 import “ xxx.less”; （整合）这样可以模块化开发，创建多个lees文件一个模块分一个less文件（动画模块、定义变量、布局），这样方便维护哪里出问题去哪个文件修改 
 
 ## 自定义类
 
@@ -977,6 +1130,7 @@ html{
 ## 元素居中
 
 - 设置margin为auto，可让子元素在父元素中水平居中显示，前提是父元素设置了宽度
+- 设置display为flex，justify-content为center，align-items为center，元素居中
 - 想让元素内文字垂直居中，给元素设置line-heiht值为其自身的height值
 - 文字水平居中使用text-align： center，配合padding可让元素水平垂直居中
 - 字体大小不同的文本垂直对齐vertical-align:   middle
@@ -989,6 +1143,28 @@ html{
 - 给元素设置display：none，不占据任何空间
 - 给元素设置visibility：none
 	- 其属性有visible（默认值）可见、hidden隐藏元素（元素依然占用空间）
+
+## 案例
+
+#### 1.三角实现
+
+```html
+<html>
+<style>
+div{
+  width:0;
+  height:0;
+  border:50px solid ;
+  border-color:red pink black green;
+}
+</style>
+<body>
+<div class="tooltip"></div>
+</body>
+</html>
+```
+
+![](../../练习文件/h5-css3/c3/css三角.jpg)
 
 ## 浏览器资源加载
 

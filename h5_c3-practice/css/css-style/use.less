@@ -1,0 +1,40 @@
+@a: box3;
+body {
+  background-color: salmon;
+}
+.box1 {
+  width: 200px;
+  height: 200px;
+  .box2 {
+    width: 100px;
+    height: $width;
+    background-image: url("@{a}/1.png");
+  }
+  > .box3 {
+    color: red;
+  }
+  &:hover {
+    background-color: aqua;
+  }
+}
+
+.p1() {
+  width: 100px;
+  height: 100px;
+}
+.p2:extend(.p1) {
+  color: aquamarine;
+}
+.p3 {
+  .p1;
+}
+
+.test(@q) {
+  width: @q;
+  height: 100px;
+  color: red;
+}
+div {
+  .test(200px);
+  tab-size: 16px;
+}

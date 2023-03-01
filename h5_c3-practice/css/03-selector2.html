@@ -1,58 +1,59 @@
 <!DOCTYPE html>
 <html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* before和after */
+      p::before {
+        content: "123";
+        color: red;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-    /* before和after */
-    p::before {
-      content: "123";
-      color: red;
-    }
+      p::after {
+        content: "456";
+        color: blue;
+      }
 
-    p::after {
-      content: "456";
-      color: blue;
-    }
+      /* :only-child伪类选择器 */
+      span:only-child {
+        color: red;
+      }
 
-    /* :only-child伪类选择器 */
-    span:only-child {
-      color: red;
-    }
+      /* :empty伪类选择器 */
+      b:empty {
+        display: inline-block;
+        width: 100px;
+        height: 30px;
+        background-color: chartreuse;
+      }
+    </style>
+  </head>
 
-    /* :empty伪类选择器 */
-    b:empty {
-      display: inline-block;
-      width: 100px;
-      height: 30px;
-      background-color: chartreuse;
-    }
-  </style>
-</head>
-
-<body>
-  <h2>伪类选择器- only-child</h2>
-  <div>
-    <span>123</span>
-  </div>
-  <div>
-    <span>123</span>
-    <span>456</span>
-  </div>
-  <br><br>
-  <h2>伪元素选择器-::before和::after</h2>
-  <p>abcde</p> <br><br>
-  <h2>:empty</h2>
-  <div>123
-    <b>qqqq</b>
-  </div>
-  <div>123
-    <b></b>
-  </div>
-  <br><br>
-</body>
-
+  <body>
+    <h2>伪类选择器- only-child</h2>
+    <div>
+      <span>123</span>
+    </div>
+    <div>
+      <span>123</span>
+      <span>456</span>
+    </div>
+    <br /><br />
+    <h2>伪元素选择器-::before和::after</h2>
+    <p>abcde</p>
+    <br /><br />
+    <h2>:empty</h2>
+    <div>
+      123
+      <b>qqqq</b>
+    </div>
+    <div>
+      123
+      <b></b>
+    </div>
+    <br /><br />
+  </body>
 </html>

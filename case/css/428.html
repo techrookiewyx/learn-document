@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style type="text/css">
+      .wapper {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        grid-gap: 10px;
+        background-color: lightblue;
+        padding: 10px;
+      }
+      .wapper > div {
+        background-color: pink;
+        border: 1px solid black;
+        text-align: center;
+        font-style: 30px;
+        padding: 20px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>网格容器</h1>
+    <p>网格容器的直接子元素将自动成为网格项目。</p>
+    <div class="wapper">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+    </div>
+  </body>
+</html>

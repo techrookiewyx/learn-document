@@ -121,3 +121,8 @@
 4. [代码](https://github.com/wzjyx676425826/learn-document/blob/main/h5_c3-practice/css/28-transform.html) |  变形中平移、旋转、缩放的函数的常用值
 6. 网页的视距
 
+#### 2.8弹性布局
+
+1. [代码](https://github.com/wzjyx676425826/learn-document/blob/main/h5_c3-practice/css/32-flex.html) |  弹性容器、弹性元素以及主轴和侧轴的概念，基本的使用方式
+2. [代码](https://github.com/wzjyx676425826/learn-document/blob/main/h5_c3-practice/css/34-flex2.html) |  弹性容器的样式
+3. 弹性元素的样式

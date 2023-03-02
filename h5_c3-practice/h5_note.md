@@ -73,7 +73,7 @@ head标签的内容不会出现在网页中，用户所能看见的内容都在b
 
 #### 绝对路径
 
-绝对路径就是该文件在电脑硬盘存在的位置
+绝对路径就是该文件在电脑硬盘/网络存在的位置
 
 ###  常用标签（元素）及属性
 
@@ -96,6 +96,19 @@ head标签的内容不会出现在网页中，用户所能看见的内容都在b
 <meta charset="utf-8"> #设置网页字符集为utf-8
 <meta name="keywords"  content="xxxx,xxx,xxx">  #指定元数据的名称  keywords表示网站的关键字供浏览器搜引擎来找到该网站,content指定数据的内容 用逗号隔开
 <meta http-equiv="refresh" content="s,rul"> #将网页经过s秒重定向到url这个地址
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />  #表示要求当前网页使用IE浏览器最高版本的内核来渲染
+
+
+name属性：  
+description (网页描述)  说明：Description用来告诉搜索引擎你的网页主要内容
+
+<meta name="viewport"  content="Width:300px">
+viewport ：设置视口的大小为300px，当content的值是devic-width时表示完美视口
+
+http-equiv属性：
+pragma(cache模式） 说明：禁止浏览器从本地计算机的 缓存中访问页面内容。
 ```
 
 #### base
@@ -114,15 +127,15 @@ p为块级元素独占一行，不保留源代码中p标签里内容的格式。
 
 pre同样为块级元素，但pre会保留源代码中pre标签里内容的格式。
 
-#### 计算机输出标签
+#### 不常用标签
+
+- bdo  标签可覆盖默认的文本方向 其属性有ltr（从左到右）
+
+##### 计算机输出标签
 
 - code：该标签用于表示计算机源代码，在该标签内的文本将用等宽、类似电传打字机样式的字体显示出来
 - tt：作用同上，h5不支持
 - var：示变量的名称，或者由用户提供的值，常与code标签和pre标签一起使用，用来显示计算机编程代码范例及类似方面的特定元素，用 var标签标记的文本通常显示为斜体。
-
-#### 不常用标签
-
-- bdo 标签可覆盖默认的文本方向
 
 #### 列表（标签都为块级元素）
 
@@ -171,7 +184,11 @@ pre同样为块级元素，但pre会保留源代码中pre标签里内容的格�
 
 ##### 列表符号
 
-使用list-style属性设置列表符号，通常用none去除即可
+- 使用list-style-type属性设置列表符号，通常用none去除即可
+
+- list-style-image：url（） 将图像作为列表项符号
+
+- list-style-position 属性设置在何处放置列表项标记，其属性有inside（列表符号放置在文本以内，且环绕文本根据标记对齐）、outside（默认值。列表符号位于文本的左侧。列表项目标记放置在文本以外）
 
 #### 超链接
 
@@ -182,7 +199,7 @@ pre同样为块级元素，但pre会保留源代码中pre标签里内容的格�
  #其中 href为要跳转的链接地址    
  #target打开该链接的方式，其常见的为两个值为_self和_blank，默认为_self在当前页面打开,_blank为在新页面打开
  # 若href的值为javascript:;时，点击此链接不会发生任何改变，单纯作为一个占位符来标识这是一个超链接
- # text-decoration属性可以设置连接的下划线样式
+ # text-decoration属性可以设置连接的下划线样式，通常
 ```
 
 ##### 描点链接
@@ -215,7 +232,7 @@ a标签还可以实现本页面跳转,通过给想要跳转的位置的标签一
 
 #### img（行内块元素）
 
-用于向当前页面引入一个外部图片
+用于向当前页面引入一个外部图片，由于img是一个替换元素，当我们引入图片时会与父元素有空隙（基线产生的），通过vertical-align:top可以去除
 
 ```bash
 <igm src=""  alt="" height="" width="" align="" ismap />
@@ -257,7 +274,7 @@ a标签还可以实现本页面跳转,通过给想要跳转的位置的标签一
 
 #### 表格
 
-表格主要用于展示数据
+表格主要用于展示格式化数据
 
 ```bash
 <table>
@@ -271,15 +288,16 @@ a标签还可以实现本页面跳转,通过给想要跳转的位置的标签一
 # th代表表格的表头部分，通常表头代表表格第一行内容
 ```
 
+默认情况下td在单元格中是垂直居中的，可以通过vertical-align来改变位置
+
 ##### 表格常用属性
 
 - align：有left、right、center三个值，分别让表格在左右中显示
-
 - border：设置表框粗细
-
 - cellpadding：规定单元格边框与其内容的距离
-
 - cellsapcing：规定单元格之间的距离
+- border-collapse（CSS中）：设置表格的边框是否被合并为一个单一的边框，其属性值有collapse（边框会合并为一个单一的边框，忽略 border-spacing 和 empty-cells 属性）、separate（默认值，边框被分开）
+- caption-side：设置表格标题的位置，其属性值有top、bottom、inherit
 
 ##### 单元格合并
 
@@ -310,9 +328,15 @@ a标签还可以实现本页面跳转,通过给想要跳转的位置的标签一
 #colspan=2代表把两个合并为1个 删除多余列
 ```
 
+##### 长表格
+
+用thead、tbody、tfoot三个标签来把表格划分成三个部分，无论这三个标签位置如何thead永远表示头部的信息。
+
+- 当我们没有在表格中使用tbody这类标签时，浏览器会自动创建一个tbody把tr放入其中，所以tr不是table的子元素
+
 #### 表单
 
-表单用来收集输入或者点击信息
+表单用来收集输入或者点击信息，来提交给远程服服务器
 
 一个表单由表单域、表单元素、提示信息三个部分组成
 
@@ -331,7 +355,7 @@ a标签还可以实现本页面跳转,通过给想要跳转的位置的标签一
 ```bash
 语法：
 <form action="#"  method="" name="">
- <input type="xx" name="xx" value="" checked="" maxlength="" placeholder="">
+ <input type="xx" name="xx" value="" checked="" maxlength="" placeholder="" autocomplete="" readonly  disabled autofocus>
 </form>
 ```
 
@@ -341,9 +365,17 @@ a标签还可以实现本页面跳转,通过给想要跳转的位置的标签一
 
 - value：规定input元素的值
 
-- checked：规定此 input 元素首次加载时被选中
+- checked：规定此 input 元素首次加载时默认被选中
 
 - placeholder：显示提示信息，用于帮助用户填写输入字段的提示
+
+- autocomplete：关闭输入框输入历史信息提示，也可以直接放到form里
+
+- readonly：将表单项设置为只读，数据会提交
+
+- disabled：将表单项设置为禁用，数据不会提交
+
+- autofocus：将该表单项设置为自动获取焦点
 
 	1. radio、checkbox
 
@@ -377,8 +409,8 @@ legend元素为fieldset元素定义标题
 ##### select下拉列表
 
 ```html
-<select>
-      <option>1</option>
+<select name="">
+      <option value="">1</option>
       <option selectd="selected">2</option>
 </select>
 <!--selected表示设置其为默认选项-->
@@ -460,8 +492,3 @@ p标签中不能放任何块元素
 ```bash
 #用法与audio相同
 ```
-
-
-
- 
-

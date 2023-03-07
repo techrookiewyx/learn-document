@@ -94,6 +94,26 @@ body {
   font-size: 20px;
   color: #ffffff;
 }
+.nav-list .hid-nav {
+  padding: 15px 0;
+  display: inline-block;
+  position: relative;
+}
+.hid-nav .select {
+  position: absolute;
+  width: 150px;
+  right: 0;
+  top: 53px;
+  background-color: #fff;
+  height: 0;
+  overflow: hidden;
+  transition: 0.4s;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.hid-nav:hover .select {
+  height: 300px;
+  z-index: 555;
+}
 .nav-list .m3 {
   margin-left: 22px;
 }
@@ -111,24 +131,6 @@ body {
 .picture img {
   width: 100%;
   height: auto;
-}
-.bg .picture2 {
-  position: absolute;
-  top: 25px;
-  left: 516px;
-}
-.bg .bg-txt {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: absolute;
-  top: 193px;
-  left: 688px;
-  width: 305px;
-  height: 89px;
-}
-.bg .bg-txt p {
-  font-size: 35px;
 }
 .bg-line {
   display: flex;
@@ -232,7 +234,7 @@ body {
   margin-right: 27px;
   background-color: #aaaaaa;
 }
-.brand-itd2 .brand-line li:first-child{
+.brand-itd2 .brand-line li:first-child {
   background-color: #252833;
 }
 
@@ -245,31 +247,31 @@ body {
   height: 532px;
   padding: 0 1px;
 }
- .caption {
+.caption {
   margin-left: 19px;
   padding-left: 10px;
   font-size: 20px;
   border-left: 6px solid #02b687;
 }
- .caption span {
+.caption span {
   margin-left: 10px;
   font-style: italic;
   font-size: 12px;
   color: #aaaaaa;
 }
-.pic-item{
+.pic-item {
   display: flex;
   justify-content: space-between;
 }
-.imgs-wapper{
+.imgs-wapper {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.imgs{
+.imgs {
   position: relative;
 }
-.imgs p{
+.imgs p {
   position: absolute;
   bottom: 0;
   width: 387px;
@@ -280,19 +282,19 @@ body {
   font-size: 30px;
   color: #fff;
 }
-.imgs-w2{
+.imgs-w2 {
   display: flex;
   justify-content: space-between;
 }
-.pic-item .imgs3{
+.pic-item .imgs3 {
   position: relative;
   height: 240px;
 }
-.pic-item .imgs4{
+.pic-item .imgs4 {
   position: relative;
   height: 234px;
 }
-.imgs3 .imgs-p3{
+.imgs3 .imgs-p3 {
   position: absolute;
   bottom: 0;
   width: 387px;
@@ -303,7 +305,7 @@ body {
   font-size: 30px;
   color: #fff;
 }
-.imgs4 .imgs-p4{
+.imgs4 .imgs-p4 {
   position: absolute;
   bottom: 0;
   width: 187px;
@@ -314,23 +316,21 @@ body {
   font-size: 30px;
   color: #fff;
 }
-.real-case{
+.real-case {
   margin-top: 57px;
- 
 }
-.nav2{
+.nav2 {
   display: flex;
   justify-content: space-between;
   margin-top: 28px;
 }
-.left-nav{
+.left-nav {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 509px;
-  
 }
-.left-nav li{
+.left-nav li {
   width: 150px;
   height: 58px;
   background-color: #a5971c;
@@ -339,96 +339,127 @@ body {
   font-size: 30px;
   color: #fff;
 }
-.export{
+.export {
   margin-top: 57px;
 }
-.export img{
+.export .imgs-container {
+  position: relative;
   margin-top: 26px;
+  width: 100%;
+  height: 489px;
+  overflow: hidden;
+}
+.imgs-container .imgs-list {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3585px;
+  height: 489px;
+  overflow: hidden;
+  animation: lunbo 9s steps(1, end) infinite;
+}
+
+.imgs-list li {
+  float: left;
+  width: 1195px;
+  height: 100%;
+}
+.imgs-list li img {
+  width: 100%;
   vertical-align: middle;
 }
-.export-line{
+.export-line {
   display: flex;
+  position: relative;
   justify-content: center;
   margin-top: 16px;
 }
-.export-line li{
+.export-line li {
   margin-right: 47px;
   width: 94px;
   height: 9px;
   background-color: #aaaaaa;
 }
-.export-line li:first-child{
+.export-line li.active {
+  position: absolute;
+  top: 0;
+  left: 386px;
   background-color: #252833;
+  animation: line-lunbo 9s steps(1, end) infinite;
 }
-.cooperate{
+.export .aaa:hover .imgs-list,
+.export .aaa:hover .active {
+  animation-play-state: paused;
+}
+.cooperate {
   margin-top: 19px;
   height: 166px;
 }
-.team-item{
+.team-item {
   display: flex;
   margin: 26px 59px 0 54px;
 }
-.team-item li{
+.team-item li {
   float: left;
-  margin-right:23px;
+  margin-right: 23px;
 }
-.team-item li img{
+.team-item li img {
   vertical-align: bottom;
 }
-.footer-wapper{
+.footer-wapper {
   height: 284px;
   background-color: #252833;
 }
-.footer{
+.footer {
   display: flex;
   margin-left: 317px;
 }
-.footer li{
+.footer li {
   text-align: center;
   color: #fff;
 }
-.footer li span{
+.footer li span {
   display: block;
 }
-.footer .item-1{
+.footer .item-1 {
   margin-top: 34px;
 }
-.footer .footer-line{
+.footer .footer-line {
   margin: 62px 58px 0 54px;
   height: 162px;
   width: 1px;
   background-color: #51535c;
 }
 
-.footer .item-1 h3{
+.footer .item-1 h3 {
   padding: 15px 0 6px 0;
   font-size: 23.5px;
 }
-.footer .item-1 h3 span{
+.footer .item-1 h3 span {
   font-size: 11.6px;
 }
-.footer .item-2{
+.footer .item-2 {
   margin-top: 28px;
 }
-.footer .item-2 h3{
+.footer .item-2 h3 {
   font-size: 20px;
   padding: 15px 0 6px 0;
 }
-.footer .item-2 span{
+.footer .item-2 span {
   line-height: 30px;
   font-size: 20px;
 }
-.footer .item-3{
+.footer .item-3 {
   margin-top: 58px;
   margin-left: 32px;
   font-size: 21px;
   text-align: left;
 }
-.item-3 span img{
+.item-3 span img {
   vertical-align: middle;
   padding-bottom: 5px;
 }
-.item-3 .item3-btn{
+.item-3 .item3-btn {
   width: 170px;
   height: 50px;
   line-height: 50px;
@@ -437,16 +468,57 @@ body {
   border-radius: 50px;
   text-align: center;
 }
-.item-3 .QQ{
+.item-3 .QQ {
   padding-left: 5px;
   margin-top: 14px;
 }
-.item-3 .item3-btn img{
-   margin-left: 15px;
+.item-3 .item3-btn img {
+  margin-left: 15px;
 }
-.item-3 .tel img{
+.item-3 .tel img {
   margin-right: 10px;
 }
-.item-3 .QQ img{
+.item-3 .QQ img {
   margin-right: 15px;
+}
+/* @keyframes lunbo {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: -1195px;
+  }
+  100% {
+    left: -2390px;
+  }
+} */
+
+@keyframes lunbo {
+  0% {
+    left: 0;
+  }
+  33.3% {
+    left: -1195px;
+  }
+  66.6% {
+    left: -2390px;
+  }
+  100% {
+    left: -3585px;
+  }
+}
+
+@keyframes line-lunbo {
+  0% {
+    left: 386px;
+  }
+  33.3% {
+    left: 527px;
+  }
+  66.6% {
+    left: 668px;
+  }
+  100% {
+    left: 809px;
+  }
 }

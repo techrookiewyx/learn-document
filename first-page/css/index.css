@@ -98,6 +98,10 @@ body {
   font-size: 20px;
   color: #ffffff;
 }
+.nav-list li a {
+  color: #ffffff;
+  text-decoration: none;
+}
 .nav-list .hid-nav {
   padding: 15px 0;
   display: inline-block;

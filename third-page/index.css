@@ -18,7 +18,7 @@ a {
   position: relative;
   height: 793px;
   background: url(./images/bg.jpg) no-repeat center top;
-  background-size: 100% auto;
+  background-size: 100% 100%;
 }
 .bgt {
   position: absolute;
@@ -179,7 +179,7 @@ a {
   width: 301px;
   height: 198px;
   background: url(./images/Layer44.jpg) no-repeat top;
-  background-size: 100%;
+  background-size: 100% 100%;
   top: -8px;
   left: -8px;
   z-index: 3;
@@ -293,13 +293,14 @@ a {
   position: relative;
   height: 674px;
   background: url(./images/displaybg.jpg) no-repeat;
-  background-size: 100%;
+  background-size: 100% 100%;
 }
 .device-wapper > img {
   position: absolute;
   vertical-align: bottom;
   top: 369px;
-  left: 839px;
+  left: 55%;
+  margin-left: 7px;
 }
 .device > div:first-child {
   margin-top: 72px;
@@ -607,7 +608,7 @@ a {
 }
 /*  */
 .what {
-  height: 1290px;
+  min-height: 1290px;
   margin: 0 auto;
 }
 .what > div:first-child {
@@ -641,26 +642,27 @@ a {
   justify-content: center;
   margin-top: 76px;
 }
-.wt-imglist img {
-  width: 379.5px;
+.wt-imglist>img {
+  /* width: 379.5px; */
+  width: 25%;
 }
 .wt-imglist > div:first-child {
   display: flex;
   flex-wrap: wrap;
-  /* width: 50%; */
-  width: 759px;
-}
-/* .wt-imglist > div:first-child img {
   width: 50%;
-} */
+  /* width: 759px; */
+}
+.wt-imglist > div:first-child img {
+  width: 50%;
+}
 .wt-imglist > div:last-child {
-  /* width: 25%; */
+  width: 25%;
   display: flex;
   flex-direction: column;
 }
-/* .wt-imglist > div:last-child img {
+.wt-imglist > div:last-child img {
   width: 100%;
-} */
+}
 .what .famous {
   position: relative;
   display: flex;
@@ -715,7 +717,7 @@ a {
 .happy-wapper {
   height: 656px;
   background: url(./images/Layer53.jpg) no-repeat;
-  background-size: 100% auto;
+  background-size: 100% 100%;
 }
 .happy > div:first-child {
   margin-top: 72px;

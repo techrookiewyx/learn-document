@@ -1,5 +1,6 @@
 .container {
   width: 100%;
+  min-width: 960px;
 }
 .w {
   width: 952px;
@@ -690,7 +691,7 @@ a {
   right: 18px;
 }
 .what .famous > div:first-child {
-  margin: 79px 25px 0px 63px;
+  margin: 79px 25px 100px 63px;
 }
 .what .famous div > p {
   width: 608px;

@@ -15,6 +15,10 @@
   font-family: "Did";
   src: url(./Fonts/Didact-Gothic-Regular.ttf);
 }
+@font-face {
+  font-family: "Hindsb";
+  src: url(./Fonts/Hind-Guntur-SemiBold.ttf);
+}
 body {
   background-color: #b4b7bb;
   display: flex;
@@ -182,6 +186,7 @@ body {
   font-size: 24px;
   font-weight: 600;
   color: #252932;
+  font-family: "Hindsb";
 }
 .part-right > h2 {
   font-size: 80px;
@@ -199,6 +204,9 @@ body {
 .edu-skill {
   display: flex;
 }
+.edu-skill h4{
+  font-family: "Hindsb";
+}
 .ed {
   margin-right: 74px;
 }
@@ -213,9 +221,9 @@ body {
   width: 217px;
 }
 .ed > div h5 {
-  margin-right: 49px;
+  margin-right: 45px;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   color: #313643;
   opacity: 0.5;
 }
@@ -240,7 +248,7 @@ body {
 .skill > div > h4 {
   margin-bottom: 15px;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 15px;
 
   color: #252932;
 }
@@ -259,6 +267,9 @@ body {
   display: flex;
   margin-top: 45px;
 }
+.exp-ext h4{
+  font-family: "Hindsb";
+}
 .exp-ext .experience {
   margin-right: 74px;
 }
@@ -275,9 +286,9 @@ body {
   margin-bottom: 40px;
 }
 .experience > div h5 {
-  margin-right: 49px;
+  margin-right: 45px;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   color: #313643;
   opacity: 0.5;
 }
@@ -321,8 +332,11 @@ body {
   display: flex;
   margin-top: 50px;
 }
+.attm-refe h4{
+  font-family: "Hindsb";
+}
 .attment {
-  margin-right: 74px;
+  margin-right: 70px;
 }
 .attment > div {
   display: flex;
@@ -332,10 +346,10 @@ body {
 }
 .attment > div h5 {
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   color: #313643;
   opacity: 0.5;
-  margin-right: 50px;
+  margin-right: 45px;
 }
 .attment > div > div {
   width: 217px;

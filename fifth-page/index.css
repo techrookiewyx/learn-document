@@ -30,7 +30,7 @@ body {
 }
 main {
   width: 100%;
-  min-width: max-content;
+  min-width: 1311px;
 }
 header {
   width: 100%;
@@ -105,7 +105,7 @@ nav .nav-right ul li:not(:last-child) {
 main > article {
   min-height: 681px;
   background: url(./images/AVE.jpg) no-repeat center top;
-  background-size: 100% auto;
+  background-size: 100% 100%;
   position: relative;
 }
 main > article > a {
@@ -140,8 +140,8 @@ nav .np2-right > ul {
   display: flex;
   margin-top: 25px;
 }
-nav .np2-right > ul .active a{
-  color:#00c8c8
+nav .np2-right > ul .active a {
+  color: #00c8c8;
 }
 nav .np2-right > ul > li:not(:last-child) {
   margin-right: 40px;
@@ -158,9 +158,9 @@ nav .np2-right > ul > li:not(:nth-child(3))::after {
   border-bottom: 2px solid #989898;
   top: 20px;
   left: 2px;
-  transform: rotate(45deg); 
+  transform: rotate(45deg);
 }
-nav .np2-right > ul li:first-child::after{
+nav .np2-right > ul li:first-child::after {
   content: "";
   border-color: #00c8c8;
 }
@@ -291,6 +291,174 @@ main .line {
 .shop-list .item > div {
   position: relative;
 }
+.shop-list .item > .it1:hover section {
+  display: block;
+  box-shadow: 0px 13px 18px 0px rgba(0, 0, 0, 0.14);
+  z-index: 99;
+}
+.shop-list .item > .it1 section {
+  position: absolute;
+  height: 111px;
+  width: 311px;
+  display: none;
+  background-color: #ffffff;
+  border-top: 1px solid #eeeeee;
+  top: 370px;
+  text-align: center;
+}
+.shop-list .item > .it1 section h4 {
+  font-size: 10px;
+  font-weight: 400;
+  color: #727272;
+  margin-bottom: 5px;
+  margin-top: 16px;
+}
+.shop-list .item > .it1 section h4 sup {
+  font-size: 6px;
+  vertical-align: super;
+}
+.shop-list .item > .it1 section h5 {
+  font-size: 11px;
+  font-family: "RR";
+  font-weight: 400;
+  color: #8e8c8c;
+  line-height: 16px;
+}
+.shop-list .item > .it1 section > div {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.shop-list .item > .it1 section > div a {
+  display: block;
+  width: 22px;
+  height: 22px;
+  margin-right: 15px;
+  background-color: #727272;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+}
+.shop-list .item > .it1 section > div a:hover {
+  background-color: #00c8c8;
+}
+.shop-list .item > .it1 section > div a i {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 22px;
+}
+.shop-list .item > .it2:hover section {
+  display: block;
+  box-shadow: 0px 13px 18px 0px rgba(0, 0, 0, 0.14);
+  z-index: 99;
+}
+.shop-list .item > .it2 section {
+  position: absolute;
+  height: 111px;
+  width: 311px;
+  display: none;
+  background-color: #ffffff;
+  border-top: 1px solid #eeeeee;
+  top: 370px;
+  text-align: center;
+}
+.shop-list .item > .it2 section h4 {
+  font-size: 10px;
+  font-weight: 400;
+  color: #727272;
+  margin-bottom: 5px;
+  margin-top: 16px;
+}
+.shop-list .item > .it2 section h4 sup {
+  font-size: 6px;
+  vertical-align: super;
+}
+.shop-list .item > .it2 section h5 {
+  font-size: 11px;
+  font-family: "RR";
+  font-weight: 400;
+  color: #8e8c8c;
+  line-height: 16px;
+}
+.shop-list .item > .it2 section > div {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.shop-list .item > .it2 section > div a {
+  display: block;
+  width: 22px;
+  height: 22px;
+  margin-right: 15px;
+  background-color: #727272;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+}
+.shop-list .item > .it2 section > div a:hover {
+  background-color: #00c8c8;
+}
+.shop-list .item > .it2 section > div a i {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 22px;
+}
+.shop-list .item > .it3:hover section {
+  display: block;
+  box-shadow: 0px 13px 18px 0px rgba(0, 0, 0, 0.14);
+  z-index: 99;
+}
+.shop-list .item > .it3 section {
+  position: absolute;
+  height: 111px;
+  width: 644px;
+  display: none;
+  background-color: #ffffff;
+  border-top: 1px solid #eeeeee;
+  top: 521px;
+  text-align: center;
+}
+.shop-list .item > .it3 section h4 {
+  font-size: 10px;
+  font-weight: 400;
+  color: #727272;
+  margin-bottom: 5px;
+  margin-top: 16px;
+}
+.shop-list .item > .it3 section h4 sup {
+  font-size: 6px;
+  vertical-align: super;
+}
+.shop-list .item > .it3 section h5 {
+  font-size: 11px;
+  font-family: "RR";
+  font-weight: 400;
+  color: #8e8c8c;
+  line-height: 16px;
+}
+.shop-list .item > .it3 section > div {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.shop-list .item > .it3 section > div a {
+  display: block;
+  width: 22px;
+  height: 22px;
+  margin-right: 15px;
+  background-color: #727272;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+}
+.shop-list .item > .it3 section > div a:hover {
+  background-color: #00c8c8;
+}
+.shop-list .item > .it3 section > div a i {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 22px;
+}
 .shop-list .item > div p {
   position: absolute;
   top: 2%;
@@ -344,19 +512,73 @@ main .line {
   text-decoration: line-through;
   margin-right: 5px;
 }
-.shop-list .item2 .it2:hover {
+.shop-list .item > div:hover {
+  box-shadow: 0px 13px 18px 0px rgba(0, 0, 0, 0.14);
+}
+.shop-list .item2 > div:hover {
   box-shadow: 0px 13px 18px 0px rgba(0, 0, 0, 0.14);
 }
 .shop-list .item2 .it2:hover .ipg {
   display: block;
   z-index: 99;
 }
-.shop-list .item2 .it2:hover section {
+.shop-list .item2 > div:hover section {
   display: block;
   box-shadow: 0px 13px 18px 0px rgba(0, 0, 0, 0.14);
   z-index: 99;
 }
-.shop-list .item2 .it2 > img:first-child {
+.shop-list .item2 > .it1 section {
+  position: absolute;
+  height: 111px;
+  width: 644px;
+  display: none;
+  background-color: #ffffff;
+  border-top: 1px solid #eeeeee;
+  top: 521px;
+  text-align: center;
+}
+.shop-list .item2 > .it1 section h4 {
+  font-size: 10px;
+  font-weight: 400;
+  color: #727272;
+  margin-bottom: 5px;
+  margin-top: 16px;
+}
+.shop-list .item2 > .it1 section h4 sup {
+  font-size: 6px;
+  vertical-align: super;
+}
+.shop-list .item2 > .it1 section h5 {
+  font-size: 11px;
+  font-family: "RR";
+  font-weight: 400;
+  color: #8e8c8c;
+  line-height: 16px;
+}
+.shop-list .item2 > .it1 section > div {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.shop-list .item2 > .it1 section > div a {
+  display: block;
+  width: 22px;
+  height: 22px;
+  margin-right: 15px;
+  background-color: #727272;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+}
+.shop-list .item2 > .it1 section > div a:hover {
+  background-color: #00c8c8;
+}
+.shop-list .item2 > .it1 section > div a i {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 22px;
+}
+.shop-list .item2 .it2 > a > img:first-child {
   height: 100%;
   object-fit: cover;
   vertical-align: bottom;
@@ -417,10 +639,73 @@ main .line {
   margin-top: 10px;
 }
 .shop-list .item2 .it2 section > div a {
-  margin-right: 15px;
-}
-.shop-list .item2 .it2 section > div a img {
+  display: block;
   width: 22px;
+  height: 22px;
+  margin-right: 15px;
+  background-color: #727272;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+}
+.shop-list .item2 .it2 section > div a:hover {
+  background-color: #00c8c8;
+}
+.shop-list .item2 .it2 section > div a i {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 22px;
+}
+.shop-list .item2 > .it3 section {
+  position: absolute;
+  height: 111px;
+  width: 311px;
+  display: none;
+  background-color: #ffffff;
+  border-top: 1px solid #eeeeee;
+  top: 370px;
+  text-align: center;
+}
+.shop-list .item2 > .it3 section h4 {
+  font-size: 10px;
+  font-weight: 400;
+  color: #727272;
+  margin-bottom: 5px;
+  margin-top: 16px;
+}
+.shop-list .item2 > .it3 section h4 sup {
+  font-size: 6px;
+  vertical-align: super;
+}
+.shop-list .item2 > .it3 section h5 {
+  font-size: 11px;
+  font-family: "RR";
+  font-weight: 400;
+  color: #8e8c8c;
+  line-height: 16px;
+}
+.shop-list .item2 > .it3 section > div {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.shop-list .item2 > .it3 section > div a {
+  display: block;
+  width: 22px;
+  height: 22px;
+  margin-right: 15px;
+  background-color: #727272;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+}
+.shop-list .item2 > .it3 section > div a:hover {
+  background-color: #00c8c8;
+}
+.shop-list .item2 > .it3 section > div a i {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 22px;
 }
 /*  */
 .lookbook {
@@ -462,7 +747,7 @@ main .line {
   color: #727272;
   line-height: 16px;
 }
-.lookbook article section p span{
+.lookbook article section p span {
   font-size: 20px;
   vertical-align: middle;
 }

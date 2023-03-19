@@ -105,7 +105,7 @@ nav .nav-right ul li:not(:last-child) {
 main > article {
   min-height: 681px;
   background: url(./images/AVE.jpg) no-repeat center top;
-  background-size: 100% 100%;
+  background-size: contain;
   position: relative;
 }
 main > article > a {
@@ -113,10 +113,12 @@ main > article > a {
   font-size: 12px;
   font-weight: 400;
   color: #454647;
-  right: 15.7%;
-  bottom: 13%;
+  right: 50%;
+  bottom: 50%;
+  margin-bottom: -250px;
   padding: 17px 30px;
   border: 2px solid #737373;
+  margin-right: -530px;
 }
 article > nav {
   width: 1311px;
@@ -711,9 +713,9 @@ main .line {
 .lookbook {
   display: flex;
   width: 100%;
+  max-width: 1600px;
   margin: 0 auto;
   margin-bottom: 92px;
-  justify-content: space-between;
 }
 .lookbook article {
   box-sizing: border-box;
@@ -725,7 +727,7 @@ main .line {
   text-align: right;
 }
 .lookbook article:not(:last-child) {
-  margin-right: 22px;
+  margin-right: 15px;
 }
 .lookbook article section h3 {
   margin-top: 73px;
@@ -770,15 +772,15 @@ main .line {
 }
 .lookbook article:first-child {
   background: url("./images/look1.jpg") no-repeat center;
-  background-size: 100% 100%;
+  background-size: contain;
 }
 .lookbook article:nth-child(2) {
   background: url("./images/look2.jpg") no-repeat center;
-  background-size: 100% 100%;
+  background-size: contain;
 }
 .lookbook article:nth-child(3) {
   background: url("./images/look3.jpg") no-repeat center;
-  background-size: 100% 100%;
+  background-size: contain;
 }
 /*  */
 footer {

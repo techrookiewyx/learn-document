@@ -104,7 +104,7 @@ nav .nav-right ul li:not(:last-child) {
 /*  */
 main > article {
   min-height: 681px;
-  background: url(./images/AVE.jpg) no-repeat center top;
+  background: #f8f8f8 url(./images/AVE.jpg) no-repeat center top;
   background-size: contain;
   position: relative;
 }

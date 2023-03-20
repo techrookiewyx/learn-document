@@ -31,8 +31,6 @@ body {
 main {
   width: 100%;
   min-width: 870px;
-  display: flex;
-  flex-direction: column;
 }
 header {
   width: 100%;

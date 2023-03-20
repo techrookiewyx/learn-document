@@ -30,7 +30,9 @@ body {
 }
 main {
   width: 100%;
-  min-width: 1311px;
+  min-width: 870px;
+  display: flex;
+  flex-direction: column;
 }
 header {
   width: 100%;
@@ -110,7 +112,7 @@ article > div{
   background-color: #f8f8f8;
 }
 article > div > nav {
-  width: 1311px;
+  max-width: 1311px;
   min-height: 83px;
   margin: 0 auto;
   display: flex;

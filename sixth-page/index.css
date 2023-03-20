@@ -113,6 +113,7 @@ article > div{
 }
 article > div > nav {
   max-width: 1311px;
+  min-width: 870px;
   min-height: 83px;
   margin: 0 auto;
   display: flex;
@@ -159,8 +160,10 @@ article div nav h1 a em {
   font-size: 18px;
   font-weight: bold;
 }
+nav .np2-right {
+  display: flex;
+}
 nav .np2-right > ul {
-  float: left;
   display: flex;
   margin-top: 25px;
 }
@@ -246,7 +249,6 @@ nav .np2-right > ul > li:hover > a {
 }
 .np2-right .search {
   position: relative;
-  float: left;
   margin-left: 80px;
   margin-top: 23px;
 }
@@ -486,4 +488,12 @@ footer {
 .f-bottom > footer > article:last-child > section {
   float: left;
   margin-left: 30px;
+}
+@media screen and (max-width:920px) {
+  nav .np2-right > ul > li:not(:last-child) {
+    margin-right: 20px;
+  }
+  .nav-right .nav-shop {
+    margin-left: 40px;
+  }
 }

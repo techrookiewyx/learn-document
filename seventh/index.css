@@ -515,9 +515,9 @@ footer {
 }
 @media screen and (max-width: 920px) {
   nav .np2-right > ul > li:not(:last-child) {
-    margin-right: 20px;
+    margin-right: 30px;
   }
-  .nav-right .nav-shop {
-    margin-left: 40px;
+  .np2-right .search {
+    margin-left: 60px;
   }
 }

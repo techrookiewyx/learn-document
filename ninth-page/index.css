@@ -382,7 +382,7 @@ nav .np2-right > ul > li:hover > a {
   color: RGB(223, 223, 222);
 }
 .shop-det .det-r .info li:last-child a:not(:first-child) {
-  margin-left: 10px;
+  margin-left: 5px;
 }
 .shop-det .det-r h4 {
   font-family: "ML";
@@ -453,7 +453,7 @@ nav .np2-right > ul > li:hover > a {
 }
 .shop-det .det-r .reg > div > i {
   position: absolute;
-  bottom: 10px;
+  bottom: 6px;
   right: 7px;
   z-index: 5;
   display: block;
@@ -492,9 +492,11 @@ nav .np2-right > ul > li:hover > a {
   border-bottom: none;
 }
 .det-r .reg > div:last-child > section .i2 i {
+  color: #989898;
   transform: rotate(-90deg);
 }
 .det-r .reg > div:last-child > section .i3 i {
+  color: #989898;
   transform: rotate(-90deg);
 }
 .det-r .opa {
@@ -516,6 +518,7 @@ nav .np2-right > ul > li:hover > a {
   color: #ffffff;
   background-color: #00c8c8;
   padding-top: 14px;
+  transition: all .3s;
 }
 .det-r .opa a:first-child i {
   color: #fff;
@@ -526,6 +529,7 @@ nav .np2-right > ul > li:hover > a {
 .det-r .opa a:last-child {
   color: #454647;
   border: 2px solid #737373;
+  transition: all .3s;
 }
 .det-r .opa a:last-child:hover {
   background-color: #00c8c8;
@@ -546,6 +550,7 @@ nav .np2-right > ul > li:hover > a {
   border-radius: 50%;
   text-align: center;
   margin-right: 10px;
+  transition: all .3s;
 }
 .det-r > div a i {
   color: #fff;
@@ -574,6 +579,9 @@ nav .np2-right > ul > li:hover > a {
   font-size: 12px;
   font-weight: 400;
   margin-right: 45px;
+}
+.desb nav ul li a{
+  transition: all .3s;
 }
 .desb nav ul li:hover a {
   background-color: #333333;

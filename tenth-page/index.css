@@ -339,7 +339,11 @@ nav .np2-right > ul > li:hover > a {
 .contain input:not(.fei) {
   margin-bottom: 25px;
 }
-.contain input:focus {
+.contain input:hover{
+  background-color: rgba(126, 242, 144, 0.05);
+  border: 1px solid green;
+}
+.contain input:invalid {
   background-color: rgba(187, 84, 101, 0.05);
   border: 1px solid #bb5465;
 }
